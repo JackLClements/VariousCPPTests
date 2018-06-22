@@ -1,0 +1,2 @@
+Short and Int automatically cast to one-another under the C++ compiler.
+As such, I've had to add a sort of hack-y line for each partially specialized template class to cause the compiler to throw an error for these cases.

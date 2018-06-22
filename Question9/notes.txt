@@ -1,0 +1,7 @@
+Drawing a line between given points is a process called interpolation.
+Whilst the simplest interpolation method, linear interpolation would have drawn lines between given points, they will simply be straight, not the best interpolation of a potential curve.
+Instead, Lagrange interpolation was used, using the polynomials of the given values to interpolate new points at the given time T.
+These polynomials are calculated by multiplying together the subtraction the sought value x from all non-current y-values, divided the multiplication of current values of x minus subsequent values of x.
+This produces a result that passes through all points given smoothly, although this polynomial is not accurate for results with large increases, as it tends to overfit.
+
+I have included a potential "draw" function here, but could not get Visual Studio Code working nicely with OpenGL within the given time limit.

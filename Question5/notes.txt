@@ -1,0 +1,2 @@
+Most of the standard strXXX functionality has been encapsulated over.
+For the sake of expediency, Iterators like those in string have not been created for slow_string.

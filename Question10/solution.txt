@@ -1,0 +1,12 @@
+Performing collision detection between the bounding boxes on each individual object in a scene is costly and will waste time for many objects that are far apart or likely to never collide.
+To optimise this and only check collisions in closely-spaced objects, a tree-derivative data structure known as a Quadtree (2D) or an Octree (3D) it utilised.
+In an Octree, each tree node has exactly eight children, representing the subdivided volume of the parent node.
+Similarly, a Quadtree has exactly four children representing the parent's subdivided volume.
+These child nodes can themselves be subdivided into an equal amount of children nodes, representing a higher degree of accuracy.
+
+In theory, a Quadtree/Octree can recurse until it only contains a single root element. 
+Practically, a Quadtree/Octree will recurse until it hits an arbitrary depth after which it can check collision against all other nodes at that depth.
+Generally speaking, a Quadtree/Octree root will be the controllable element, a "player character" or similar, so that the tree can be balanced and insertion/searching is efficient.
+
+Compared to other tree-structures designed to subdivide geometric space, such as a k-d tree, Quadtrees/Octrees subdivisions are of equal size, meaning that an exact bounding depth can be difficult to generate.
+However, k-d trees require balancing to achieve this accuracy, and given that seperate collision detection operations need to be performed after this, a self-balancing Quadtree/Octree structure is more efficient.

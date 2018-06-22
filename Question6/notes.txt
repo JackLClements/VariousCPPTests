@@ -1,0 +1,10 @@
+SIMD (Single Instruction, Multiple Data) processors have the ability to process multiple pieces of data within a single CPU instruction.
+This is particularly useful in graphics-programs since they are instruction intensive.
+
+Processor-specific data-types and functions exist for vectors and other data structures that allow the compiler to interpret the command as a SIMD instruction in assembly.
+These functions can be optionally used via a compiler method such as Advanced Vector Extensions, which can be checked for via AvxAvailable()
+
+For more complex classes, it may be worth utilising a design pattern called Abstract Factory, which calls AvxAvailable early in its lifespan and instantiates one of two child classes depending on the result.
+
+Similarly, simpler optimisation methods such as converting commonly used functions to pre-processor directives, cutting down on memory used for variables and utilising caching for expensive operations such as Square Root (sqrt()) also speed operations up.
+

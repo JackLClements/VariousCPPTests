@@ -1,0 +1,9 @@
+This question was vaguely worded, and I have had to assume that it refers to finding the exact point the relative location of a point on the plane of an arbitrary polygon mesh.
+
+Taking this as the question, I have used Barycentric co-ordinates mathematics to calculate whether a point lies within a plane, and to calculate the distance from there.
+Calculating three vectors, from an origin vertex on the triangle A to two further verteces B and C, as well as to the point P.
+These vectors can be expressed in relation to one-another, and as such re-arranged to find the arbitrary local attributes u and v.
+If, the resultant directions are between 0 and 1, they lie within the triangle itself and can be added to the relative height/width of the plane to calculate the distances.
+Using this, I simply stepped through the mesh vector in-order, checking against each triangle until the result was reached.
+
+This is likely not the most efficient way to finding a point on a mesh, but was what sprang to mind first.
